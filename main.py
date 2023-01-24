@@ -1,5 +1,8 @@
+from display import Display
+
 def main():
-    print("hello world")
+    window = Display()
+    window.show()
 
 
 if __name__ == "__main__":
