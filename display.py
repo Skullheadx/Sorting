@@ -35,4 +35,4 @@ class Display:
         delta = self.clock.tick(self.FPS)
 
     def draw(self, surf):
-        self.screen.fill(GRAY)
+        surf.fill(GRAY)

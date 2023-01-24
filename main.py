@@ -1,5 +1,6 @@
 from display import Display
 
+
 def main():
     window = Display()
     window.show()
