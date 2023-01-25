@@ -3,7 +3,7 @@ from utils import swap
 
 
 def selection_sort(array):
-    for index1 in range(len(array) - 1, -1, -1):  # loop through from end
+    for index1 in range(len(array) - 1, 0, -1):  # loop through from end
         swap_index = 0  # largest element to swap with
         for index2 in range(index1 + 1):  # loop through the first index1 elements
             if array[index2] > array[swap_index]:  # find the max element to swap with
