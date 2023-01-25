@@ -1,4 +1,5 @@
 import pygame
+import time
 pygame.init()
 
 pygame.display.set_caption("sorting visuals")
@@ -9,11 +10,16 @@ WHITE = (255, 255, 255)
 
 
 class Display:
-    WIDTH, HEIGHT = 1080, 720
+    WIDTH, HEIGHT = 1920, 1080
     DIMENSIONS = (WIDTH, HEIGHT)
     FPS = 0
 
-    DELAY_TIME = 0
+    DELAY_TIME = 20
+    # 25 for insertion sort
+    # 75 for selection sort
+    # 10 for bogo sort
+    # 20 for bubble sort
+
 
     def __init__(self, frames):
         self.screen = pygame.display.set_mode(self.DIMENSIONS)
@@ -30,6 +36,9 @@ class Display:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     is_running = False
+                if event.type == pygame.KEYUP:
+                    if event.key == pygame.K_ESCAPE:
+                        is_running = False
 
             self.update()
             self.draw(self.screen)
@@ -52,5 +61,5 @@ class Display:
         height = self.HEIGHT / max(self.frames[self.index])
 
         for i, element in enumerate(self.frames[self.index]):
-            r = pygame.Rect(i * width, self.HEIGHT - element * height + 1, width + 1, element * height)
+            r = pygame.Rect(i * width, self.HEIGHT - element * height, width + 1, element * height + 1)
             pygame.draw.rect(surf, BLACK, r)

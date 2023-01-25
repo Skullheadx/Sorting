@@ -12,6 +12,8 @@ def bubble_sort(array):
         if is_sorted:  # break out if already sorted
             break
     return array  # return sorted array
+
+
 def bubble_sort_frames(array):
     frames = []
     for top in range(len(array) - 1, 0, -1):  # loop through each element from end
@@ -23,4 +25,4 @@ def bubble_sort_frames(array):
                 frames.append(array[:])
         if is_sorted:  # break out if already sorted
             break
-    return frames  # return sorted array
+    return frames
