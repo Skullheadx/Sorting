@@ -3,9 +3,12 @@ from utils import swap
 
 
 def bubble_sort(array):
-    for index1 in range(len(array)):  # loop through each element
-        for index2 in range(index1, len(array)):  # loop through each of the next elements
-            if array[index2] < array[index1]:  # if lesser, then swap
-                swap(array, index1, index2)
+    for top in range(len(array) - 1, 0, -1):  # loop through each element from end
+        is_sorted = True  # to end early if already sorted
+        for index in range(top):  # loop through each of elements until reach top
+            if array[index] > array[index + 1]:  # if greater, swap
+                swap(array, index, index + 1)  # swap with next
+                is_sorted = False  # reset to not sorted
+        if is_sorted:  # break out if already sorted
+            break
     return array  # return sorted array
-
