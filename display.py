@@ -14,7 +14,7 @@ class Display:
     DIMENSIONS = (WIDTH, HEIGHT)
     FPS = 0
 
-    DELAY_TIME = 20
+    DELAY_TIME = 20  # in milliseconds
     # 25 for insertion sort
     # 75 for selection sort
     # 10 for bogo sort
